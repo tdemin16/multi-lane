@@ -1,6 +1,3 @@
-<h1 align="center">
-    🛣️ MULTI-LANE 🛣️
-</h1>
 <p align="center">
     <img src="assets/logo.png" alt="drawing" style="width:200px;"/>
 </p>
