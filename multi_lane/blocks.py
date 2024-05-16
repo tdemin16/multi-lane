@@ -54,13 +54,6 @@ class PreT_Attention(nn.Module):
         self.proj_drop = nn.Dropout(proj_drop)
 
         self.loss = 0
-
-    def get_selectors(self):
-        assert hasattr(self, 'selectors')
-        if self.training:
-            return self.selectors[self.t:self.t+1]
-        else:
-            return self.selectors[:self.t+1]
     
     def get_prompts(self, cls):
         assert hasattr(self, 'prompts')
@@ -90,13 +83,13 @@ class PreT_Attention(nn.Module):
                 
             # compute softmax similarity between global selectors and patches
             T, B, G, C = g_selectors.shape
-            g_patch_attn = torch.einsum('tbsc, bnc -> tbsn', g_selectors, x.detach()) * self.token_scale # [T, B, S, C] X [B, N, C] -> [T, B, S, N]
+            # [T, B, S, C] X [B, N, C] -> [T, B, S, N]
+            g_patch_attn = torch.einsum('tbsc, bnc -> tbsn', g_selectors, x.detach()) * self.token_scale
             g_soft_patches = g_patch_attn.softmax(dim=-1)
 
             # aggregate patches according to softmax similarity
+            # [B, N, C] X [T, B, S, N, 1] -> [T, B, S, C]
             g_task_patches = torch.einsum('bnc, tbsn -> tbsc', x.detach(), g_soft_patches)
-            # g_sel_x = x.unsqueeze(0).unsqueeze(2).detach()
-            # g_task_patches = torch.sum(g_sel_x * g_soft_patches.unsqueeze(-1), dim=3) # [1, B, 1, N, C] X [T, B, S, N, 1] -> [T, B, S, C]
 
             # compute softmax similarity between local selectors and patches
             task_patches = g_task_patches

@@ -265,16 +265,6 @@ def evaluate_till_now_multi(model: nn.Module, criterion, data_loader, device: to
     cf1, class_wise_cf1 = utils.f1_score_per_class(clean_predictions, clean_targets)
     #$ ------------------------------------
 
-    #? ------- Print statistics for histogram -------
-    target_frequencies = clean_targets.sum(dim=0)
-    sorted_classes, indices = torch.sort(target_frequencies, descending=True)
-    class_wise_cf1 = class_wise_cf1[indices]
-    class_names = [data_loader.dataset.dataset.category2name[i.item()] for i in indices]
-    with open('class_wise_cf1.txt', 'w') as f:
-        for i, cf1_ in enumerate(class_wise_cf1):
-            f.write(f'{class_names[i]}-{indices[i].item()}-{sorted_classes[i].item()}: {cf1_.item():.4f}\n')
-    #? ----------------------------------------------
-
     result_str = f"[Average performances till task {task_id+1}]"
     result_str += f"\tmAP: {mAP.item():.4f}\tamAP: {mAP_vector[:task_id+1].mean():.4f}\toF1: {of1.item():.4f}\tcF1: {cf1.item():.4f}"
     result_str += f"\tLoss: {metric_logger.meters['Loss'].global_avg:.4f}"
