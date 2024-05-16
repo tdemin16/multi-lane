@@ -1,9 +1,11 @@
+<h1 align="center">
+    🛣️ MULTI-LANE 🛣️
+</h1>
 <p align="center">
     <img src="assets/logo.png" alt="drawing" style="width:200px;"/>
 </p>
 
-# 🛣️ <span style="font-variant:small-caps;">multi-lane</span>
-Official Implementation of "Less is more: Summarizing Patch Tokens for efficient Multi-Label Class-Incremental Learning (<span style="font-variant:small-caps;">multi-lane</span>)", published at 3rd Conference on Lifelong Learning Agents (CoLLAS 2024)
+Official Implementation of "Less is more: Summarizing Patch Tokens for efficient Multi-Label Class-Incremental Learning (MULTI-LANE)", published at 3rd Conference on Lifelong Learning Agents (CoLLAs 2024)
 
 ## 🛠️ Installation
 Create and create a conda environment with Python 3.8.17:
@@ -25,7 +27,7 @@ Datasets are stored in the `datasets/` folder (it will be automatically created)
 Pre-Trained Weights are stored in the default timm directory.
 
 ## 🏃‍♀️ Training
-We prepared six training scripts to train <span style="font-variant:small-caps;">multi-lane</span> on each dataset and configuration we show in the paper:
+We prepared six training scripts to train MULTI-LANE on each dataset and configuration we show in the paper:
 
 - COCO B0-C10 (MLCIL) `$ ./train_coco.sh`
 - COCO B40-C10 (MLCIL) `$ ./train_coco_40.sh`
