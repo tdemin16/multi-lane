@@ -1,0 +1,16 @@
+# python
+__pycache__/
+
+
+# directories
+datasets/
+wandb/
+output/
+
+# files
+*.pdf
+slurm_script.sh
+train.sh
+*.jpg
+*.png
+*.txt
