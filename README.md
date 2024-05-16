@@ -1,6 +1,4 @@
-<p align="center">
-    <img src="assets/logo.png" alt="drawing" style="width:1000px;"/>
-</p>
+![Logo]("assets/logo.png")
 
 Official Implementation of "Less is more: Summarizing Patch Tokens for efficient Multi-Label Class-Incremental Learning (MULTI-LANE)", published at 3rd Conference on Lifelong Learning Agents (CoLLAs 2024)
 
