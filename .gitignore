@@ -12,5 +12,4 @@ output/
 slurm_script.sh
 train.sh
 *.jpg
-*.png
 *.txt
