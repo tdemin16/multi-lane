@@ -5,7 +5,7 @@
 Official Implementation of "Less is more: Summarizing Patch Tokens for efficient Multi-Label Class-Incremental Learning (MULTI-LANE)", published at 3rd Conference on Lifelong Learning Agents (CoLLAs 2024)
 
 ## 🛠️ Installation
-Create and create a conda environment with Python 3.8.17:
+Create and activate a conda environment with Python 3.8.17:
 ```
 $ conda create -n multilane python=3.8.17
 $ conda activate multilane
@@ -24,7 +24,7 @@ Datasets are stored in the `datasets/` folder (it will be automatically created)
 Pre-Trained Weights are stored in the default timm directory.
 
 ## 🏃‍♀️ Training
-We prepared six training scripts to train MULTI-LANE on each dataset and configuration we show in the paper:
+We prepared six training scripts to train MULTI-LANE on each dataset, and configuration, we show in the paper:
 
 - COCO B0-C10 (MLCIL) `$ ./train_coco.sh`
 - COCO B40-C10 (MLCIL) `$ ./train_coco_40.sh`
@@ -38,11 +38,11 @@ To change the number of selectors at training time, pass the argument `--num_sel
 ```
 $ ./train_coco.sh --num_selectors 1
 ```
-Or edit train_coco.sh and add the argument manually.
+Or edit train_coco.sh and add the argument there.
 
 Similarly, to use token merging instead of selectors pass the argument `--tome` with the number of tokens to be retained. Additionally, remove selectors from training by setting their quantity to 0 `--num_selectors 0`. For example:
 ```
-$ ./train_coco.sh --num_selectors 0 --tome 24
+$ ./train_coco.sh --num_selectors 0 --tome 30
 ```
 
 ## 🙅‍♀️Ablations
