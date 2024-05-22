@@ -5,9 +5,9 @@
 Official Implementation of "Less is more: Summarizing Patch Tokens for efficient Multi-Label Class-Incremental Learning (MULTI-LANE)", published at 3rd Conference on Lifelong Learning Agents (CoLLAs 2024)
 
 ## 🛠️ Installation
-Create and activate a conda environment with Python 3.8.17:
+Create and activate a conda environment with Python 3.11.17:
 ```
-$ conda create -n multilane python=3.8.17
+$ conda create -n multilane python=3.11.17
 $ conda activate multilane
 ```
 
