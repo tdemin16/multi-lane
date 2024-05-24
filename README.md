@@ -53,5 +53,11 @@ To run one of the ablations we show in the paper, use the following arguments:
 
 ## Citing our work
 ```
-todo
+@inproceedings{de2024less,
+  title={Less is more: Summarizing Patch Tokens for efficient Multi-Label Class-Incremental Learning},
+  author={De Min, Thomas and Mancini, Massimiliano and Lathuili{\`e}re, St{\'e}phane and Roy, Subhankar and Ricci, Elisa},
+  booktitle={Conference on Lifelong Learning Agents},
+  year={2024},
+  organization={PMLR}
+}
 ```
