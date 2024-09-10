@@ -27,7 +27,6 @@ def get_args_parser(subparsers: argparse.ArgumentParser):
     subparsers.add_argument('--store_model', action='store_true', help='Store the model')
     subparsers.add_argument('--wandb', action='store_true', help='Enables Weights and Biases')
     subparsers.add_argument('--project', default='fluffy')
-    subparsers.set_defaults(normalize=True)
 
     # Model parameters
     subparsers.add_argument('--model', default='vit_base_patch16_224', type=str, metavar='MODEL', help='Name of model to train')
